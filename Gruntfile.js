@@ -23,12 +23,22 @@ module.exports = function (grunt) {
                 src: 'dist/app.js',
                 dest: 'dist/app.min.js'
             }
-        }
+        },
+        watch: {
+            scripts: {
+                files: ['src/app.js'],
+                tasks: ['default'],
+                options: {
+                    spawn: false,
+                },
+            },
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
     grunt.registerTask('default', ['qunit', 'concat', 'uglify']);
