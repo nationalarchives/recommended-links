@@ -11,7 +11,7 @@ module.exports = function (grunt) {
                 separator: ';',
             },
             dist: {
-                src: ['bower_components/jquery/dist/jquery.js', 'src/app.js'],
+                src: ['src/recommended_links.js', 'src/app.js'],
                 dest: 'dist/app.js',
             },
         },
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
         },
         watch: {
             scripts: {
-                files: ['src/app.js'],
+                files: ['src/*.js', 'tests/*.js'],
                 tasks: ['default'],
                 options: {
                     spawn: false,
@@ -41,6 +41,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ['qunit', 'concat', 'uglify']);
+    grunt.registerTask('default', ['concat', 'uglify', 'qunit', 'watch']);
 
 };
