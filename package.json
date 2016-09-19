@@ -1,0 +1,24 @@
+{
+  "name": "recommended-links",
+  "version": "1.0.0",
+  "description": "## Recommended links application",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-qunit": "^1.2.0",
+    "grunt-contrib-uglify": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nationalarchives/recommended-links.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nationalarchives/recommended-links/issues"
+  },
+  "homepage": "https://github.com/nationalarchives/recommended-links#readme"
+}
