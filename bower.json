@@ -1,0 +1,22 @@
+{
+  "name": "recommended-links",
+  "homepage": "https://github.com/nationalarchives/recommended-links",
+  "authors": [
+    "Gwyn Jones <gwyn.jones@nationalarchives.gsi.gov.uk>"
+  ],
+  "description": "JavaScript application for showing recommended links within search results pages",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "qunit": "^2.0.1"
+  }
+}
