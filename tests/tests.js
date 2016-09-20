@@ -35,9 +35,8 @@ QUnit.module("Testing the data which the app relies upon", function () {
 
                 // Testing the referenced link has a snippet property
                 assert.ok(link_data.links[j].hasOwnProperty('snippet'));
-
-            })
-        })
+            });
+        });
     });
 });
 

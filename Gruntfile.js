@@ -3,6 +3,9 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        jshint: {
+            all: ['Gruntfile.js', 'tests/**/*.js', 'src/**/*.js']
+        },
         qunit: {
             all: ['tests/*.html']
         },
@@ -35,12 +38,13 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ['concat', 'uglify', 'qunit', 'watch']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'qunit', 'watch']);
 
 };

@@ -53,5 +53,5 @@ var link_data = (function () {
 
     $.fn.recommended_links.defaults = {
         // Plugin defaults
-    }
+    };
 }(jQuery));;

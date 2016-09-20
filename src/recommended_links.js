@@ -8,5 +8,5 @@
 
     $.fn.recommended_links.defaults = {
         // Plugin defaults
-    }
+    };
 }(jQuery));
