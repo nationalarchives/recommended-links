@@ -40,3 +40,14 @@ QUnit.module("Testing the data which the app relies upon", function () {
         })
     });
 });
+
+QUnit.module("Testing related link retrieval", function () {
+    QUnit.test("link_data.get_links behaves as expected", function (assert) {
+        assert.ok(typeof link_data.get_links === 'function', "link_data.get_links is a function");
+        assert.equal(link_data.get_links(), false, "If called without an argument, link_data.get_links() returns false");
+        assert.equal(link_data.get_links(''), false, "If passed an empty string, link_data.get_links() returns false");
+        assert.ok(Array.isArray(link_data.get_links('library')), "If passed 'library', link_data.get_links() returns an array");
+        assert.ok(link_data.get_links('library').length > 0, "If passed 'library', link_data.get_links() returns an array with two items");
+        assert.ok(link_data.get_links('Library').length > 0, "If passed 'Library', link_data.get_links() returns an array with two items");
+    });
+});

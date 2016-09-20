@@ -11,7 +11,7 @@ module.exports = function (grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['src/recommended_links.js', 'src/link_data.js', 'src/app.js'],
+                src: ['src/link_data.js', 'src/recommended_links.js', 'src/app.js'],
                 dest: 'dist/app.js'
             }
         },
@@ -29,10 +29,10 @@ module.exports = function (grunt) {
                 files: ['src/*.js', 'tests/*.js'],
                 tasks: ['concat', 'uglify', 'qunit'],
                 options: {
-                    spawn: false,
-                },
-            },
-        },
+                    spawn: false
+                }
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-qunit');
