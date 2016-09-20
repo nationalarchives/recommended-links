@@ -8,12 +8,12 @@ module.exports = function (grunt) {
         },
         concat: {
             options: {
-                separator: ';',
+                separator: ';'
             },
             dist: {
-                src: ['src/recommended_links.js', 'src/app.js'],
-                dest: 'dist/app.js',
-            },
+                src: ['src/recommended_links.js', 'src/link_data.js', 'src/app.js'],
+                dest: 'dist/app.js'
+            }
         },
         uglify: {
             options: {
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
         watch: {
             scripts: {
                 files: ['src/*.js', 'tests/*.js'],
-                tasks: ['default'],
+                tasks: ['concat', 'uglify', 'qunit'],
                 options: {
                     spawn: false,
                 },
