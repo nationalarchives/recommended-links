@@ -25,9 +25,7 @@ QUnit.module("Testing the data which the app relies upon", function () {
             assert.ok(typeof link_data.links[i].text === 'string');
             assert.ok(typeof link_data.links[i].description === 'string');
             assert.ok(typeof link_data.links[i].source === 'string');
-        })
-
-
+        });
     });
 
 

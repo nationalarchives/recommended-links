@@ -21,15 +21,55 @@ var link_data = (function () {
         {
             term: /^library(?: resources)?/i,
             related_links: ['tna_library']
+        },
+        {
+            term: /^cen(c|s)us/i,
+            related_links: ['census']
+        },
+        {
+            term: /^electori?al register/i,
+            related_links: ['electoral_register']
+        },
+        {
+            term: /^divorces?/i,
+            related_links: ['divorce']
+        },
+        {
+            term: /(deaths?|certificates?)/i,
+            related_links: ['birth_marriage_death']
         }
     ];
 
     var links = {
         tna_library: {
-            text: 'The National Archives\' library',
             url: 'http://tna.koha-ptfs.co.uk/',
+            text: 'The National Archives\' library',
             description: 'Search for archive-related books and periodical',
             source: 'The National Archives website'
+        },
+        census: {
+            url: 'http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/census-records/',
+            text: 'Census records',
+            description: 'Census records for England and Wales from 1841 to 1911 are available online.',
+            source: 'The National Archives website'
+        },
+        electoral_register: {
+            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/electoral-registration/",
+            text: "Electoral registration",
+            description: "See our related research guide(s).",
+            source: "Research Guides"
+        },
+        divorce: {
+            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/divorces/",
+            text: "Divorces",
+            description: "See our related research guide(s).",
+            source: "Research Guides"
+        },
+        birth_marriage_death: {
+            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/birth-marriage-and-death-certificates/",
+            text: "Birth, marriage and death certificates",
+            description: "See our related research guide(s).",
+            source: "Research Guides"
         }
     };
 
