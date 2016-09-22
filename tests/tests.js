@@ -16,25 +16,40 @@ QUnit.module("Testing the data which the app relies upon", function () {
         assert.ok(Array.isArray(link_data.terms), "link_data.terms is an array");
         assert.ok(typeof link_data.links === 'object', "link_data.links exists as an object");
     });
+
+    QUnit.test("Every index of link_data.links has the correct properties", function (assert) {
+        var keys = Object.keys(link_data.links);
+
+        keys.forEach(function (i) {
+            assert.ok(typeof link_data.links[i].url === 'string');
+            assert.ok(typeof link_data.links[i].text === 'string');
+            assert.ok(typeof link_data.links[i].description === 'string');
+            assert.ok(typeof link_data.links[i].source === 'string');
+        })
+
+
+    });
+
+
     QUnit.test("Every index of link_data.terms is an object", function (assert) {
         link_data.terms.forEach(function (i) {
             assert.ok(typeof i === 'object', i + " is an object");
-            assert.ok(typeof i.term === 'string', i + ".term is an string");
+            assert.ok(i.term instanceof RegExp, i + ".term is instance of RegExp");
             assert.ok(Array.isArray(i.related_links), i + ".related_links is an array");
             assert.ok(i.related_links.length > 0, i + " has at least one item");
             i.related_links.forEach(function (j) {
                 // Testing the referenced link exists
                 assert.ok(link_data.links.hasOwnProperty(j), "link_data.links has a property called " + j);
 
-                // Testing the referenced link href is a URL
+                // Testing the referenced link url is a URL
                 var urlRegExp = /^(?:http|https):\/\/[\w\-_]+(?:\.[\w\-_]+)+[\w\-.,@?^=%&:/~\\+#]*$/;
-                assert.ok(urlRegExp.test(link_data.links[j].href), link_data.links[j].href + ' is a valid URL');
+                assert.ok(urlRegExp.test(link_data.links[j].url), link_data.links[j].url + ' is a valid URL');
 
                 // Testing the referenced link text is present
                 assert.ok(typeof link_data.links[j].text === 'string', link_data.links[j].text + ' is a string');
 
-                // Testing the referenced link has a snippet property
-                assert.ok(link_data.links[j].hasOwnProperty('snippet'));
+                // Testing the referenced link has a description property
+                assert.ok(link_data.links[j].hasOwnProperty('description'));
             });
         });
     });

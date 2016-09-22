@@ -6,7 +6,7 @@ var link_data = (function () {
         var links_to_show = [];
         if (!!str) {
             for (var i = 0; i < this.terms.length; i++) {
-                if(this.terms[i].term === str.toLowerCase()) {
+                if(this.terms[i].term.test(str.toLowerCase())) {
                     for (var j = 0; j < this.terms[i].related_links.length; j++) {
                         links_to_show.push(this.links[this.terms[i].related_links[j]]);
                     }
@@ -19,21 +19,17 @@ var link_data = (function () {
 
     var terms = [
         {
-            term: 'library',
-            related_links: ['tna_library', 'discovery']
+            term: /^library(?: resources)?/i,
+            related_links: ['tna_library']
         }
     ];
 
     var links = {
         tna_library: {
-            href: 'http://www.nationalarchives.gov.uk/library',
             text: 'The National Archives\' library',
-            snippet: ''
-        },
-        discovery: {
-            href: 'http://www.nationalarchives.gov.uk/discovery',
-            text: 'The National Archives Discovery: our catalogue',
-            snippet: 'Search over 11 million records'
+            url: 'http://tna.koha-ptfs.co.uk/',
+            description: 'Search for archive-related books and periodical',
+            source: 'The National Archives website'
         }
     };
 
