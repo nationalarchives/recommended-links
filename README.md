@@ -13,7 +13,7 @@ The data for this application will initially be contained in JSON format within 
 
 ## Using the plugin
 
-This jQuery plugin should be applied in the normal way - as a method of a wrapped jQuery set.
+This jQuery plugin should be applied in the normal way - as a method of a wrapped jQuery set. Note: the selector provided should be a `<ul>` element to which the plugin will _prepend_ the related links.
 
 ```javascript 
 $('#search-results').recommended_links();
