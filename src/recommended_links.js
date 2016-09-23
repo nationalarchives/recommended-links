@@ -11,7 +11,7 @@
         return this.each(function () {
             var $this = $(this);
             related_links.forEach(function (i) {
-                $('<li><h3><a href="' + i.url + '">' + i.text + '</a></h3><p>' + i.description + '</p><p>Source: ' + i.source + '</p></li>').appendTo($this);
+                $('<li><h3><a href="' + i.url + '">' + i.text + '</a></h3><p>' + i.description + '</p><p>Source: ' + i.source + '</p></li>').prependTo($this);
             });
         });
     };
