@@ -11,6 +11,19 @@ To provide client-side recommended-links functionality on search results pages. 
 
 The data for this application will initially be contained in JSON format within the application.
 
+## Using the plugin
+
+This jQuery plugin should be applied in the normal way - as a method of a wrapped jQuery set.
+
+```javascript 
+$('#search-results').recommended_links();
+```
+
+In addition to the defaults there are two available configurations: 
+
+* ```link_data``` is a reference to a link_data object
+* ```search_regex``` is a Regular Expression that will extract all but the search terms
+
 ## Development machine setup
 
 [Bower](https://bower.io) is used for dependency management in this project. See `bower.json` for a listing of dependencies.
