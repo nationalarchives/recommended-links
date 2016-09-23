@@ -68,15 +68,48 @@ QUnit.module("Spot testing objects returned by link_data.get_links()", function 
     QUnit.test("Testing variants of 'library'", function (assert) {
         var terms_to_test = ['Library', 'library', 'Library Resources', 'library resources'];
         terms_to_test.forEach(function (i) {
-            assert.ok(link_data.get_links(i)[0]['text'] === 'The National Archives\' library');
+            assert.ok(link_data.get_links(i)[0].text === 'The National Archives\' library');
         });
     });
 
     QUnit.test("Testing variants of 'death certificate'", function (assert) {
         var terms_to_test = ['death', 'death certificate', 'certificate', 'certificates'];
         terms_to_test.forEach(function (i) {
-            assert.ok(link_data.get_links(i)[0]['text'] === 'Birth, marriage and death certificates');
-        })
+            assert.ok(link_data.get_links(i)[0].text === 'Birth, marriage and death certificates');
+        });
+    });
+});
+
+QUnit.module("Testing the plugin behaviour", function () {
+    QUnit.test("If the query string contains library, then the related links are appended to the DOM", function (assert) {
+
+        // Using History API to update the query string without requiring a reload.
+        if (history.pushState) {
+            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?_q=library';
+            window.history.pushState({path: newurl}, '', newurl);
+        }
+
+        $('#search-results').recommended_links();
+
+        assert.equal($('#search-results li').first().find('h3').text(), 'The National Archives\' library', 'The heading is correct');
+        assert.equal($('#search-results li').first().find('p').first().text(), 'Search for archive-related books and periodical', 'The first paragraph is correct');
+        assert.equal($('#search-results li').first().find('p').eq(1).text(), 'Source: The National Archives website', 'The second paragraph is correct');
+
+    });
+
+    QUnit.test("If the query string contains library, then the related links are appended to the DOM", function (assert) {
+        // Using History API to update the query string without requiring a reload.
+        if (history.pushState) {
+            var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?_q=cencus';
+            window.history.pushState({path: newurl}, '', newurl);
+        }
+
+        $('#search-results').recommended_links();
+
+        assert.equal($('#search-results li').first().find('h3').text(), 'Census records', 'The heading is correct');
+        assert.equal($('#search-results li').first().find('p').first().text(), 'Census records for England and Wales from 1841 to 1911 are available online.', 'The first paragraph is correct');
+        assert.equal($('#search-results li').first().find('p').eq(1).text(), 'Source: The National Archives website', 'The second paragraph is correct');
+
     });
 
 });
