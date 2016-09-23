@@ -35,6 +35,7 @@ Dependencies can be installed by:
 
 [Grunt JS](http://gruntjs.com/) is used for build processes and task automation. See `package.json` for a listing of modules used. See the Grunt JS website for installation details. Modules can be installed by typing `npm install`. Typing `grunt` will run the 'default' task, which consists of:
  
+* linting files
 * concatenating files
 * uglifying files
 * running QUnit unit tests against the output
