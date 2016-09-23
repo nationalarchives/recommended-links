@@ -63,3 +63,20 @@ QUnit.module("Testing related link retrieval", function () {
         assert.ok(link_data.get_links('Library').length > 0, "If passed 'Library', link_data.get_links() returns an array with two items");
     });
 });
+
+QUnit.module("Spot testing objects returned by link_data.get_links()", function () {
+    QUnit.test("Testing variants of 'library'", function (assert) {
+        var terms_to_test = ['Library', 'library', 'Library Resources', 'library resources'];
+        terms_to_test.forEach(function (i) {
+            assert.ok(link_data.get_links(i)[0]['text'] === 'The National Archives\' library');
+        });
+    });
+
+    QUnit.test("Testing variants of 'death certificate'", function (assert) {
+        var terms_to_test = ['death', 'death certificate', 'certificate', 'certificates'];
+        terms_to_test.forEach(function (i) {
+            assert.ok(link_data.get_links(i)[0]['text'] === 'Birth, marriage and death certificates');
+        })
+    });
+
+});
