@@ -1,5 +1,7 @@
 // Implemented using the revealing module pattern
 
+"use strict";
+
 var link_data = (function () {
 
     var get_links = function (str) {
