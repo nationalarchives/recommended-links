@@ -18,7 +18,7 @@ var link_data = (function () {
         return false;
     };
 
-    var remove_url_string_separators = function(str) {
+    var remove_url_string_separators = function (str) {
         return str.replace(/\+/g, ' ');
     };
 
@@ -92,11 +92,15 @@ var link_data = (function () {
             related_links: ['army_regiments']
         },
         {
-            term: /(merchant )?navy/i,
+            term: /^navy/i,
+            related_links: ['royal_navy_ratings', 'royal_navy_logbooks', 'merchant_navy_pre_1857', 'merchant_navy_pre_1917', 'merchant_navy_post_1917']
+        },
+        {
+            term: /merchant navy/i,
             related_links: ['merchant_navy_pre_1857', 'merchant_navy_pre_1917', 'merchant_navy_post_1917']
         },
         {
-            term: /(royal )?navy/i,
+            term: /royal navy/i,
             related_links: ['royal_navy_ratings', 'royal_navy_logbooks']
         },
         {
