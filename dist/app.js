@@ -76,19 +76,19 @@ var link_data = (function () {
             related_links: ['boer_war']
         },
         {
-            term: /(slavery|slave registers)/i,
+            term: /(slavery|slave( registers)?)/i,
             related_links: ['slavery']
         },
         {
-            term: /army soldiers/i,
+            term: /(army )?soldiers?/i,
             related_links: ['army_soldiers_after_1913']
         },
         {
-            term: /army officers/i,
+            term: /(army )?officers?/i,
             related_links: ['army_officers_after_1913']
         },
         {
-            term: /(army regiments|coldstream guards|army service corps|machine gun corps)/i,
+            term: /((army )?regiments?|coldstream guards|(army )?service corps|machine gun corps)/i, 
             related_links: ['army_regiments']
         },
         {
