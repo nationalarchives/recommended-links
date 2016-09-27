@@ -19,7 +19,7 @@ var link_data = (function () {
     };
 
     var remove_url_string_separators = function(str) {
-        return str.replace('+', ' ');
+        return str.replace(/\+/g, ' ');
     };
 
     var terms = [
