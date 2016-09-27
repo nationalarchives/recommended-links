@@ -56,11 +56,11 @@ var link_data = (function () {
             related_links: ['naturalisation']
         },
         {
-            term: /(first world war|ww1|great war)/i,
+            term: /(first world war|ww1|great war|world war (one|1))/i,
             related_links: ['first_world_war']
         },
         {
-            term: /(second world war|ww2|world war two)/i,
+            term: /(second world war|ww2|world war (two|2))/i,
             related_links: ['second_world_war']
         },
         {
