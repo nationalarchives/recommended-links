@@ -92,7 +92,7 @@ var link_data = (function () {
             related_links: ['army_regiments']
         },
         {
-            term: /merchant navy/i,
+            term: /(merchant )?navy/i,
             related_links: ['merchant_navy_pre_1857', 'merchant_navy_pre_1917', 'merchant_navy_post_1917']
         },
         {

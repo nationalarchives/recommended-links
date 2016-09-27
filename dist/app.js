@@ -88,11 +88,11 @@ var link_data = (function () {
             related_links: ['army_officers_after_1913']
         },
         {
-            term: /((army )?regiments?|coldstream guards|(army )?service corps|machine gun corps)/i, 
+            term: /((army )?regiments?|coldstream guards|(army )?service corps|machine gun corps)/i,
             related_links: ['army_regiments']
         },
         {
-            term: /merchant navy/i,
+            term: /(merchant )?navy/i,
             related_links: ['merchant_navy_pre_1857', 'merchant_navy_pre_1917', 'merchant_navy_post_1917']
         },
         {
