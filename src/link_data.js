@@ -1,8 +1,7 @@
 // Implemented using the revealing module pattern
 
-"use strict";
-
 var link_data = (function () {
+    "use strict";
 
     var get_links = function (str) {
         var links_to_show = [];
@@ -146,7 +145,7 @@ var link_data = (function () {
             related_links: ['police']
         },
         {
-            term: /prisons/i,
+            term: /prisons?/i,
             related_links: ['prisons']
         },
         {
