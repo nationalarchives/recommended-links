@@ -5,8 +5,9 @@ var link_data = (function () {
     var get_links = function (str) {
         var links_to_show = [];
         if (!!str) {
+            str = remove_url_string_separators(str);
             for (var i = 0; i < this.terms.length; i++) {
-                if (this.terms[i].term.test(str.toLowerCase())) {
+                if (this.terms[i].term.test(str)) {
                     for (var j = 0; j < this.terms[i].related_links.length; j++) {
                         links_to_show.push(this.links[this.terms[i].related_links[j]]);
                     }
@@ -15,6 +16,10 @@ var link_data = (function () {
             return links_to_show;
         }
         return false;
+    };
+
+    var remove_url_string_separators = function(str) {
+        return str.replace('+', ' ');
     };
 
     var terms = [
