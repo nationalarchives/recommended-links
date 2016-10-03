@@ -4,19 +4,40 @@ var link_data = (function () {
     "use strict";
 
     var get_links = function (str) {
-        var links_to_show = [];
+        var links_to_show = [],
+            unique_link_keys = [];
         if (!!str) {
             str = remove_url_string_separators(str);
-            for (var i = 0; i < this.terms.length; i++) {
-                if (this.terms[i].term.test(str)) {
-                    for (var j = 0; j < this.terms[i].related_links.length; j++) {
-                        links_to_show.push(this.links[this.terms[i].related_links[j]]);
-                    }
-                }
-            }
+            unique_link_keys = this.get_link_keys(str);
+
+            unique_link_keys.forEach(function (i) {
+                links_to_show.push(this.links[i]);
+            }, this);
+
             return links_to_show;
         }
         return false;
+    };
+
+    var get_link_keys = function (str) {
+        var link_keys = [];
+        this.terms.forEach(function (i) {
+            if (i.term.test(str)) {
+                link_keys = link_keys.concat(i.related_links);
+            }
+        }, this);
+
+        return unique(link_keys);
+    };
+
+    var unique = function (arr) {
+        var arr_without_duplicates = [];
+        arr.forEach(function (i) {
+            if (arr_without_duplicates.indexOf(i) === -1) {
+                arr_without_duplicates.push(i);
+            }
+        });
+        return arr_without_duplicates;
     };
 
     var remove_url_string_separators = function (str) {
@@ -408,14 +429,14 @@ var link_data = (function () {
             source: "Research Guides"
         },
         merchant_navy_pre_1917: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant%20seaman%20serving-up-to-1857/",
-            text: "Merchant seamen serving up to 1857",
+            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant%20seaman%20serving-1858-1917/",
+            text: "Merchant seamen serving 1858 to 1917",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         merchant_navy_post_1917: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant%20seaman%20serving-up-to-1857/",
-            text: "Merchant seamen serving up to 1857",
+            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant%20seaman%20serving-after-1917/",
+            text: "Merchant seamen serving after 1917",
             description: "See our related research guide(s).",
             source: "Research Guides",
         },
@@ -611,7 +632,8 @@ var link_data = (function () {
     return {
         terms: terms,
         links: links,
-        get_links: get_links
+        get_links: get_links,
+        get_link_keys: get_link_keys
     };
 
 })();

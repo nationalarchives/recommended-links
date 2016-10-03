@@ -78,6 +78,42 @@ QUnit.module("Spot testing objects returned by link_data.get_links()", function 
             assert.ok(link_data.get_links(i)[0].text === 'Birth, marriage and death certificates');
         });
     });
+
+    QUnit.test("Testing there are no duplicate recommended links returned", function (assert) {
+
+        // This is a relatively complex test to ensure that the user is not presented with duplicated links.
+
+        // We first create an array of terms that we would like to test. These should be terms which match more
+        // than one term RegEx where there is some overlap between the related links for terms.
+        var terms_to_test = ['navy merchant navy', 'military officers soldier regiment'];
+
+        // And an array that will contain the URLs from the recommended links returned by the app
+        var urls_returned = [];
+
+        // We then iterate over the array of terms and push the URLs obtained onto the urls_returned array
+        // Note: This should results in an array of items which contains no duplicates
+        terms_to_test.forEach(function (i) {
+            link_data.get_links(i).forEach(function (j) {
+                urls_returned.push(j.url);
+            });
+
+            // We then iterate over the returned URLs and:
+            //      1.  Remove each item individually
+            //      2.  Check that it no longer appears having been removed
+            //          (On the basis that it is a duplicate if it does).
+            urls_returned.forEach(function (i) {
+                // var index = urls_returned.indexOf(i);
+                // urls_returned.splice(index, 1);
+                var item = urls_returned.pop();
+                assert.ok(urls_returned.indexOf(item) === -1, "Having been removed, there are no more instances of the URL on: " + i);
+            });
+
+            urls_returned = [];
+
+        });
+
+    });
+
 });
 
 QUnit.module("Testing the plugin behaviour", function () {
