@@ -64,6 +64,19 @@ QUnit.module("Testing related link retrieval", function () {
     });
 });
 
+QUnit.module("Testing that the 'term' RegEx within every 'term' object matches every string within its 'string_to_match' property", function () {
+    QUnit.test("The 'test' Regex matches every string within 'string_to_match'", function (assert) {
+        link_data.terms.forEach(function (i) {
+            // Todo: hasOwnProperty condition introduced to allow testing while developing. Remove before commit
+            if (i.hasOwnProperty('strings_to_match')) {
+                i.strings_to_match.forEach(function (j) {
+                    assert.ok(i.term.test(j), j + ' matches the Regex ' + i.term.toString());
+                }, i);
+            }
+        });
+    });
+});
+
 QUnit.module("Spot testing objects returned by link_data.get_links()", function () {
     QUnit.test("Testing variants of 'library'", function (assert) {
         var terms_to_test = ['Library', 'library', 'Library Resources', 'library resources'];

@@ -47,215 +47,269 @@ var link_data = (function () {
     var terms = [
         {
             term: /^library(?: resources)?/i,
-            related_links: ['tna_library']
+            related_links: ['tna_library'],
+            strings_to_match: ['library', 'library resources']
         },
         {
             term: /^cen(c|s)us/i,
-            related_links: ['census']
+            related_links: ['census'],
+            strings_to_match: ['census', 'cencus']
         },
         {
             term: /^electori?al register/i,
-            related_links: ['electoral_register']
+            related_links: ['electoral_register'],
+            strings_to_match: ['electoral register', 'electorial register']
         },
         {
             term: /^divorces?/i,
-            related_links: ['divorce']
+            related_links: ['divorce'],
+            strings_to_match: ['divorce', 'divorces']
         },
         {
             term: /(deaths?|certificates?)/i,
-            related_links: ['birth_marriage_death']
+            related_links: ['birth_marriage_death'],
+            strings_to_match: ['death', 'deaths', 'certificate', 'certificates']
         },
         {
             term: /adoptions?/i,
-            related_links: ['adoptions']
+            related_links: ['adoptions'],
+            strings_to_match: ['adoption', 'adoptions']
         },
         {
             term: /hospitals?/i,
-            related_links: ['hospitals']
+            related_links: ['hospitals'],
+            strings_to_match: ['hospital', 'hospitals']
         },
         {
             term: /naturali(z|s)ation/i,
-            related_links: ['naturalisation']
+            related_links: ['naturalisation'],
+            strings_to_match: ['naturalisation', 'naturalization']
         },
         {
             term: /(first world war|ww1|great war|world war (one|1))/i,
-            related_links: ['first_world_war']
+            related_links: ['first_world_war'],
+            strings_to_match: ['first world war', 'ww1', 'great war',  'world war one', 'world war 1']
         },
         {
             term: /(second world war|ww2|world war (two|2))/i,
-            related_links: ['second_world_war']
+            related_links: ['second_world_war'],
+            strings_to_match: ['second world war', 'ww2', 'world war two', 'world war 2']
         },
         {
             term: /(crimean?|eastern war)/i,
-            related_links: ['crimean_war']
+            related_links: ['crimean_war'],
+            strings_to_match: ['crimea', 'crimean', 'eastern war']
         },
         {
             term: /cold war/i,
-            related_links: ['cold_war']
+            related_links: ['cold_war'],
+            strings_to_match: ['cold war']
         },
         {
             term: /bo(e|a)r war/i,
-            related_links: ['boer_war']
+            related_links: ['boer_war'],
+            strings_to_match: ['boar war', 'boer war']
         },
         {
             term: /(slavery|slave( registers)?)/i,
-            related_links: ['slavery']
+            related_links: ['slavery'],
+            strings_to_match: ['slavery', 'slave', 'slave registers']
         },
         {
             term: /(army )?soldiers?/i,
-            related_links: ['army_soldiers_after_1913']
+            related_links: ['army_soldiers_after_1913'],
+            strings_to_match: ['soldier', 'army soldier', 'army soldiers']
         },
         {
             term: /(army )?officers?/i,
-            related_links: ['army_officers_after_1913']
+            related_links: ['army_officers_after_1913'],
+            strings_to_match: ['officer', 'officers', 'army officer']
+
         },
         {
             term: /((army )?regiments?|coldstream guards|(army )?service corps|machine gun corps)/i,
-            related_links: ['army_regiments']
+            related_links: ['army_regiments'],
+            strings_to_match: ['army regiment', 'army regiments', 'coldstream guards', 'army service corps', 'service corps', 'machine gun corpsl']
         },
         {
             term: /^navy/i,
-            related_links: ['royal_navy_ratings', 'royal_navy_logbooks', 'merchant_navy_pre_1857', 'merchant_navy_pre_1917', 'merchant_navy_post_1917']
+            related_links: ['royal_navy_ratings', 'royal_navy_logbooks', 'merchant_navy_pre_1857', 'merchant_navy_pre_1917', 'merchant_navy_post_1917'],
+            strings_to_match: ['navy']
         },
         {
             term: /merchant navy/i,
-            related_links: ['merchant_navy_pre_1857', 'merchant_navy_pre_1917', 'merchant_navy_post_1917']
+            related_links: ['merchant_navy_pre_1857', 'merchant_navy_pre_1917', 'merchant_navy_post_1917'],
+            strings_to_match: ['merchant navy']
         },
         {
             term: /royal navy/i,
-            related_links: ['royal_navy_ratings', 'royal_navy_logbooks']
+            related_links: ['royal_navy_ratings', 'royal_navy_logbooks'],
+            strings_to_match: ['royal navy']
         },
         {
             term: /((royal )?air force|raf( squadrons)?)/i,
-            related_links: ['air_force_personnel', 'air_force_squadrons']
+            related_links: ['air_force_personnel', 'air_force_squadrons'],
+            strings_to_match: ['royal air force', 'air force', 'raf', 'raf squadrons']
         },
         {
             term: /military/i,
-            related_links: ['army_soldiers_after_1913', 'army_officers_after_1913', 'army_regiments', 'royal_navy_ratings', 'air_force_personnel']
+            related_links: ['army_soldiers_after_1913', 'army_officers_after_1913', 'army_regiments', 'royal_navy_ratings', 'air_force_personnel'],
+            strings_to_match: ['military']
         },
         {
             term: /(war )?diar(ies|y)/i,
-            related_links: ['war_diaries']
+            related_links: ['war_diaries'],
+            strings_to_match: ['war diaries', 'war diary', 'diary', 'diaries']
         },
         {
             term: /(medals?( rolls)?|index cards?|ww1 war medals)/i,
-            related_links: ['ww1_medals', 'military_gallantry', 'civilian_gallantry']
+            related_links: ['ww1_medals', 'military_gallantry', 'civilian_gallantry'],
+            strings_to_match: ['medals', 'medal rolls', 'medals rolls', 'index card', 'index cards', 'ww1 war medals']
         },
         {
             term: /war medals/i,
-            related_links: ['campaign_and_service_medals', 'military_gallantry']
+            related_links: ['campaign_and_service_medals', 'military_gallantry'],
+            strings_to_match: ['war medals']
         },
         {
             term: /gallantry/i,
-            related_links: ['military_gallantry', 'civilian_gallantry']
+            related_links: ['military_gallantry', 'civilian_gallantry'],
+            strings_to_match: ['gallantry']
         },
         {
             term: /victoria cross/i,
-            related_links: ['victoria_cross']
+            related_links: ['victoria_cross'],
+            strings_to_match: ['victoria cross']
         },
         {
             term: /(royal )?flying corps|rfc/i,
-            related_links: ['flying_corps_airmen', 'flying_corps_officers']
+            related_links: ['flying_corps_airmen', 'flying_corps_officers'],
+            strings_to_match: ['royal flying corps', 'flying corps', 'rfc']
         },
         {
             term: /home ?guard/i,
-            related_links: ['homeguard']
+            related_links: ['homeguard'],
+            strings_to_match: ['home guard', 'homeguard']
         },
         {
             term: /police/i,
-            related_links: ['police']
+            related_links: ['police'],
+            strings_to_match: ['police']
         },
         {
             term: /prisons?/i,
-            related_links: ['prisons']
+            related_links: ['prisons'],
+            strings_to_match: ['prison', 'prisons']
         },
         {
             term: /crew( lists)?/i,
-            related_links: ['crew_lists_to_1860', 'crew_lists_from_1860']
+            related_links: ['crew_lists_to_1860', 'crew_lists_from_1860'],
+            strings_to_match: ['crew lists', 'crew']
         },
         {
             term: /league of nations/i,
-            related_links: ['league_of_nations']
+            related_links: ['league_of_nations'],
+            strings_to_match: ['league of nations']
         },
         {
             term: /indian army/i,
-            related_links: ['indian_army']
+            related_links: ['indian_army'],
+            strings_to_match: ['indian army']
         },
         {
             term: /(a2a|access to archives)/i,
-            related_links: ['a2a']
+            related_links: ['a2a'],
+            strings_to_match: ['a2a', 'access to archives']
         },
         {
             term: /nra|(national )?register of archives/i,
-            related_links: ['nra']
+            related_links: ['nra'],
+            strings_to_match: ['nra', 'national register of archives', 'register of archives']
         },
         {
             term: /archon/i,
-            related_links: ['archon']
+            related_links: ['archon'],
+            strings_to_match: ['archon']
         },
         {
             term: /manorial documents register|mdr|manor/i,
-            related_links: ['mdr']
+            related_links: ['mdr'],
+            strings_to_match: ['manorial documents register', 'mdr', 'manor']
         },
         {
             term: /mi5/i,
-            related_links: ['mi5']
+            related_links: ['mi5'],
+            strings_to_match: ['mi5']
         },
         {
             term: /ufos?( files)?/i,
-            related_links: ['ufo']
+            related_links: ['ufo'],
+            strings_to_match: ['ufo', 'ufos', 'ufo files']
         },
         {
             term: /maps?/i,
-            related_links: ['maps']
+            related_links: ['maps'],
+            strings_to_match: ['map', 'maps']
         },
         {
             term: /doo?me?sday/i,
-            related_links: ['domesday']
+            related_links: ['domesday'],
+            strings_to_match: ['doomesday', 'domesday', 'domsday', 'doomsday']
         },
         {
             term: /titanic/i,
-            related_links: ['titanic']
+            related_links: ['titanic'],
+            strings_to_match: ['titanic']
         },
         {
             term: /court( records)?/i,
-            related_links: ['criminals_and_convicts', 'civil_litigants']
+            related_links: ['criminals_and_convicts', 'civil_litigants'],
+            strings_to_match: ['court', 'court records']
         },
         {
             term: /parish( records)?/i,
-            related_links: ['births_marriages_deaths']
+            related_links: ['births_marriages_deaths'],
+            strings_to_match: ['parish', 'parish records']
         },
         {
             term: /^houses?/i,
-            related_links: ['houses']
+            related_links: ['houses'],
+            strings_to_match: ['house', 'houses']
         },
         {
             term: /olympics?/i,
-            related_links: ['olympics']
+            related_links: ['olympics'],
+            strings_to_match: ['olympic', 'olympics']
         },
         {
             term: /magna carta/i,
-            related_links: ['magna_carta']
+            related_links: ['magna_carta'],
+            strings_to_match: ['magna carta']
         },
         {
             term: /poor law/i,
-            related_links: ['poor_law']
+            related_links: ['poor_law'],
+            strings_to_match: ['poor law']
         },
         {
             term: /work( )?houses?/i,
-            related_links: ['workhouse']
+            related_links: ['workhouse'],
+            strings_to_match: ['workhouse', 'workhouses', 'work house', 'workhouses']
         },
         {
             term: /cabinet( papers)?/i,
-            related_links: ['cabinet_papers']
+            related_links: ['cabinet_papers'],
+            strings_to_match: ['cabinet', 'cabinet papers']
         },
         {
             term: /(probate )?(pcc )?wills?( online)?|probate/i,
-            related_links: ['wills_1384_1858', 'wills_or_administrations_pre_1858', 'wills_or_administrations_post_1858']
+            related_links: ['wills_1384_1858', 'wills_or_administrations_pre_1858', 'wills_or_administrations_post_1858'],
+            strings_to_match: ['probate', 'wills', 'pcc will', 'pcc wills', 'will', 'pcc wills online', 'probate wills online']
         },
         {
             term: /(government )?web archive/i,
-            related_links: ['web_archive']
+            related_links: ['web_archive'],
+            strings_to_match: ['government web archive', 'web archive']
         }
     ];
 
