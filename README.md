@@ -15,21 +15,23 @@ The data for this application will initially be contained in JSON format within 
 
 Recommended links are listed in `link_data` object within the `link_data.js` file. The relevant properties of this object are:
 
-* The `terms` array of objects, each of which has two properties: 
+* The `terms` array of objects, each of which has three properties: 
   * a `term` Regular Expression which the search term will be tested against 
   * a `related_links` array of related links (each of which corresponds to a key in the `links` object below)
+  * a `strings_to_match` array of terms that should be matched by the regular expression
 * The `links` object with named properties which are related links
 
 ### Steps to add a recommended link
 
 To add a new recommended link follow these steps: 
 
-**If the link already exists** in the `links` object simply add a new `term` object that points to it. For example, to have users see the existing links to 'poor law' and 'workhouses' when they search for poverty you would add this object to the `links` array
+**If the link already exists** in the `links` object simply add a new `term` object that points to it. For example, to have users see the existing links to 'poor law' and 'workhouses' when they search for poverty you would add this object to the `links` array. **Note:** `strings_to_match` is used to ensure that the regular expression picks up everything that is expected, so please ensure all necessary terms are included here.
 
 ```javascript
         {
             term: /poverty/i,
-            related_links: ['poor_law', 'workhouses']
+            related_links: ['poor_law', 'workhouses'],
+            strings_to_match: ['poverty']
         },
 ```
 
@@ -38,7 +40,8 @@ To add a new recommended link follow these steps:
 ```javascript
         {
             term: /shakespeare/i,
-            related_links: ['shakespeares_will']
+            related_links: ['shakespeares_will'],
+            strings_to_match: ['shakespeare', 'Shakespeare']
         },
 ```
 
@@ -62,6 +65,15 @@ Note: the term here will match 'shakespeare' but no variants. This can be replac
 * shakespeare's will
 * shakespeares will
 * shakespeare will
+
+#### Running the tests
+
+This application has a great many tests to ensure that it behaves as expected. These include tests to ensure that: 
+
+* There is a `related_link` object for every term
+* Every item `strings_to_match` is matched by its `term`
+
+These have been written so that they will automatically pick up any changes to `link_data` so **it is essential that these tests continue to pass whenever the application is changed**
 
 ## Using the plugin
 
