@@ -86,7 +86,7 @@ $('#search-results').recommended_links();
 In addition to the defaults there are two available configurations: 
 
 * ```link_data``` is a reference to a link_data object
-* ```search_regex``` is a Regular Expression that will extract all but the search terms
+* ```search_regex``` is a Regular Expression that can be used to override the defaults for extracting all but the actual search terms from `window.location.search`
 
 ## Development machine setup
 
