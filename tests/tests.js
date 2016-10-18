@@ -85,6 +85,10 @@ QUnit.module("Spot testing objects returned by link_data.get_links()", function 
         });
     });
 
+    QUnit.test("Testing that 'trafalgar' does not return any results", function (assert) {
+        assert.ok(link_data.get_links('trafalgar').length === 0, 'The term "trafalgar" returned no results');
+    });
+
     QUnit.test("Testing variants of 'death certificate'", function (assert) {
         var terms_to_test = ['death', 'death certificate', 'certificate', 'certificates'];
         terms_to_test.forEach(function (i) {

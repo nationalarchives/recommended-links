@@ -147,7 +147,7 @@ var link_data = (function () {
             strings_to_match: ['royal navy']
         },
         {
-            term: /((royal )?air force|raf( squadrons)?)/i,
+            term: /((royal )?air force|^raf( squadrons)?)/i,
             related_links: ['air_force_personnel', 'air_force_squadrons'],
             strings_to_match: ['royal air force', 'air force', 'raf', 'raf squadrons']
         },
