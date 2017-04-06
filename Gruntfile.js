@@ -14,7 +14,7 @@ module.exports = function (grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['src/link_data.js', 'src/recommended_links.js', 'src/app.js'],
+                src: ['src/link_data.js', 'src/recommended_links.js'],
                 dest: 'dist/app.js'
             }
         },

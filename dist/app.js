@@ -712,4 +712,4 @@ var link_data = (function () {
         link_data: window.link_data,
         search_regex: /\?_q=/i
     };
-}(jQuery));;
+}(jQuery));
