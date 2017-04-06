@@ -203,7 +203,7 @@ var link_data = (function () {
         },
         {
             term: /crew( lists)?/i,
-            related_links: ['crew_lists_to_1860', 'crew_lists_from_1860'],
+            related_links: ['crew_lists_to_1860', 'crew_lists_after_1861'],
             strings_to_match: ['crew lists', 'crew']
         },
         {
@@ -530,8 +530,8 @@ var link_data = (function () {
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
-        crew_lists_from_1860: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/crew-lists-agreements-log-books-merchant-ships-after-1861/",
+        crew_lists_after_1861: {
+            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/crew-lists-agreements-log-books-merchant-ships-1861/",
             text: "Crew lists, agreements and log books of merchant ships after 1861",
             description: "See our related research guide(s).",
             source: "Research Guides"
