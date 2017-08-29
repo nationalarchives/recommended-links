@@ -357,7 +357,7 @@ var link_data = (function () {
             source: "The National Archives website"
         },
         naturalisation: {
-            url: "http://www.nationalarchives.gov.uk/contact/contactform.asp?id=7",
+            url: "https://www.nationalarchives.gov.uk/contact-us/request-a-search-for-a-certificate-of-british-citizenship-1949-1986/",
             text: "Certificates of British citizenship",
             description: "Order copies of naturalisation certificates between 1949 and 1986.",
             source: "The National Archives website"
@@ -411,13 +411,13 @@ var link_data = (function () {
             source: "Research Guides"
         },
         army_regiments: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/army-regiment/",
+            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/army-regiments/",
             text: "Army regiments",
             description: "See our related research guide(s).",
             source: "Research Guides",
         },
         royal_navy_ratings: {
-            url: "http://www.nationalarchives.gov.uk/records/looking-for-person/royalnavyrating1853-1923.htm",
+            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-navy-ratings-service-records-1853-1928/",
             text: "Royal Navy ratings 1853-1923",
             description: "See our related research guide(s).",
             source: "Research Guides",
@@ -447,7 +447,7 @@ var link_data = (function () {
             source: "Research Guides"
         },
         ww1_medals: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-medal-index-cards-1914-1920/.htm",
+            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-medal-index-cards-1914-1920/",
             text: "British Army medal index cards 1914-1923",
             description: "See our related research guide(s).",
             source: "Research Guides"
