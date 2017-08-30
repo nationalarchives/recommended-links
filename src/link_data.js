@@ -679,8 +679,25 @@ var link_data = (function () {
             text: "UK Government web archive",
             description: "The National Archives is preserving UK government information published on the web",
             source: "The National Archives website"
+        },
+        discovery_account: {
+            url: "https://secure.nationalarchives.gov.uk/Login/youraccount",
+            text: "Your account on Discovery",
+            description: "Sign into or visit your account on Discovery, our catalogue",
+            source: "Discovery"
+        },
+        bookshop_account: {
+            url: "http://bookshop.nationalarchives.gov.uk/store/go/require-login/",
+            text: "Your Bookshop account",
+            description: "Sign into or visit your account on Discovery, our catalogue",
+            source: "Bookshop"
+        },
+        images_account: {
+            url: "https://images.nationalarchives.gov.uk/assetbank-nationalarchives/action/viewLogin",
+            text: "Your image library account",
+            description: "Sign into or create an account with our image library",
+            source: "Image library"
         }
-
     };
 
     return {
