@@ -310,6 +310,11 @@ var link_data = (function () {
             term: /(government )?web archive/i,
             related_links: ['web_archive'],
             strings_to_match: ['government web archive', 'web archive']
+        },
+        {
+            term: /((sign|log) ?in|account)/i,
+            related_links: ['discovery_account', 'bookshop_account', 'images_account'],
+            strings_to_match: ['sign in', 'log in', 'login', 'account']
         }
     ];
 
