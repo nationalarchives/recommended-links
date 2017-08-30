@@ -310,6 +310,11 @@ var link_data = (function () {
             term: /(government )?web archive/i,
             related_links: ['web_archive'],
             strings_to_match: ['government web archive', 'web archive']
+        },
+        {
+            term: /((sign|log) ?in|account)/i,
+            related_links: ['discovery_account', 'bookshop_account', 'images_account'],
+            strings_to_match: ['sign in', 'log in', 'login', 'account']
         }
     ];
 
@@ -357,7 +362,7 @@ var link_data = (function () {
             source: "The National Archives website"
         },
         naturalisation: {
-            url: "http://www.nationalarchives.gov.uk/contact/contactform.asp?id=7",
+            url: "https://www.nationalarchives.gov.uk/contact-us/request-a-search-for-a-certificate-of-british-citizenship-1949-1986/",
             text: "Certificates of British citizenship",
             description: "Order copies of naturalisation certificates between 1949 and 1986.",
             source: "The National Archives website"
@@ -411,13 +416,13 @@ var link_data = (function () {
             source: "Research Guides"
         },
         army_regiments: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/army-regiment/",
+            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/army-regiments/",
             text: "Army regiments",
             description: "See our related research guide(s).",
             source: "Research Guides",
         },
         royal_navy_ratings: {
-            url: "http://www.nationalarchives.gov.uk/records/looking-for-person/royalnavyrating1853-1923.htm",
+            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-navy-ratings-service-records-1853-1928/",
             text: "Royal Navy ratings 1853-1923",
             description: "See our related research guide(s).",
             source: "Research Guides",
@@ -447,7 +452,7 @@ var link_data = (function () {
             source: "Research Guides"
         },
         ww1_medals: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-medal-index-cards-1914-1920/.htm",
+            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-medal-index-cards-1914-1920/",
             text: "British Army medal index cards 1914-1923",
             description: "See our related research guide(s).",
             source: "Research Guides"
@@ -679,8 +684,25 @@ var link_data = (function () {
             text: "UK Government web archive",
             description: "The National Archives is preserving UK government information published on the web",
             source: "The National Archives website"
+        },
+        discovery_account: {
+            url: "https://secure.nationalarchives.gov.uk/Login/youraccount",
+            text: "Your account on Discovery",
+            description: "Sign into or visit your account on Discovery, our catalogue",
+            source: "Discovery"
+        },
+        bookshop_account: {
+            url: "http://bookshop.nationalarchives.gov.uk/store/go/require-login/",
+            text: "Your Bookshop account",
+            description: "Sign into or visit your account on Discovery, our catalogue",
+            source: "Bookshop"
+        },
+        images_account: {
+            url: "https://images.nationalarchives.gov.uk/assetbank-nationalarchives/action/viewLogin",
+            text: "Your image library account",
+            description: "Sign into or create an account with our image library",
+            source: "Image library"
         }
-
     };
 
     return {
