@@ -694,7 +694,7 @@ var link_data = (function () {
         bookshop_account: {
             url: "http://bookshop.nationalarchives.gov.uk/store/go/require-login/",
             text: "Your Bookshop account",
-            description: "Sign into or visit your account on Discovery, our catalogue",
+            description: "Sign into or create an account with our Bookshop",
             source: "Bookshop"
         },
         images_account: {
