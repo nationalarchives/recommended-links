@@ -710,7 +710,7 @@ var link_data = (function () {
         },
         advanced_orders: {
             url: "http://www.nationalarchives.gov.uk/about/visit-us/researching-here/how-to-view-and-copy-documents/",
-            text: "Ordering documents in advance or in bulk",
+            text: "How to view and copy documents",
             description: "Order documents online before you visit to save time when you arrive.",
             source: "The National Archives website"
         }
