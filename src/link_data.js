@@ -315,6 +315,11 @@ var link_data = (function () {
             term: /((sign|log) ?in|account)/i,
             related_links: ['discovery_account', 'bookshop_account', 'images_account'],
             strings_to_match: ['sign in', 'log in', 'login', 'account']
+        },
+        {
+            term: /((advanced?|bulk)\s?(order(s|ing)?)|order(ing)?\s?((in)? advance|documents|records))/i,
+            related_links: ['advanced_orders'],
+            strings_to_match: ['order documents','advance order','bulk order','ordering documents','order in advance','advance orders','bulk orders','Order documents','order records','advanced order','advance ordering','advanced orders','order advance']
         }
     ];
 
@@ -702,6 +707,12 @@ var link_data = (function () {
             text: "Your image library account",
             description: "Sign into or create an account with our image library",
             source: "Image library"
+        },
+        advanced_orders: {
+            url: "http://www.nationalarchives.gov.uk/about/visit-us/researching-here/how-to-view-and-copy-documents/",
+            text: "How to view and copy documents",
+            description: "Information about how you can view or obtain copies of documents held by The National Archives.",
+            source: "The National Archives website"
         }
     };
 
