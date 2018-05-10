@@ -709,7 +709,7 @@ var link_data = (function () {
             source: "Image library"
         },
         advanced_orders: {
-            url: "http://www.nationalarchives.gov.uk/about/visit-us/researching-here/how-to-view-and-copy-documents/",
+            url: "http://www.nationalarchives.gov.uk/about/visit-us/researching-here/how-to-order-view-and-copy-documents/",
             text: "How to view and copy documents",
             description: "Information about how you can view or obtain copies of documents held by The National Archives.",
             source: "The National Archives website"
