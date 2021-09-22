@@ -1,7 +1,5 @@
 # Recommended links JavaScript application
 
-[![Build Status](https://travis-ci.org/nationalarchives/recommended-links.svg?branch=master)](https://travis-ci.org/nationalarchives/recommended-links)
-
 ## Purpose
 
 To provide client-side recommended-links functionality on search results pages. This JavaScript application will:
