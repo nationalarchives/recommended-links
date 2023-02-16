@@ -313,8 +313,13 @@ var link_data = (function () {
         },
         {
             term: /((sign|log) ?in|account)/i,
-            related_links: ['discovery_account', 'bookshop_account', 'images_account'],
+            related_links: ['discovery_account', 'images_account'],
             strings_to_match: ['sign in', 'log in', 'login', 'account']
+        },
+        {
+            term: /((advanced?|bulk)\s?(order(s|ing)?)|order(ing)?\s?((in)? advance|documents|records))/i,
+            related_links: ['advanced_orders'],
+            strings_to_match: ['order documents','advance order','bulk order','ordering documents','order in advance','advance orders','bulk orders','Order documents','order records','advanced order','advance ordering','advanced orders','order advance']
         }
     ];
 
@@ -326,37 +331,37 @@ var link_data = (function () {
             source: 'The National Archives website'
         },
         census: {
-            url: 'http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/census-records/',
+            url: 'https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/census-records/',
             text: 'Census records',
             description: 'Census records for England and Wales from 1841 to 1911 are available online.',
             source: 'The National Archives website'
         },
         electoral_register: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/electoral-registration/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/electoral-registration/",
             text: "Electoral registration",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         divorce: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/divorces/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/divorce/",
             text: "Divorces",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         birth_marriage_death: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/birth-marriage-and-death-certificates/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/birth-marriage-and-death-certificates/",
             text: "Birth, marriage and death certificates",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         adoptions: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/adoptions/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/adoptions/",
             text: "Adoptions",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         hospitals: {
-            url: "http://www.nationalarchives.gov.uk/hospitalrecords/",
+            url: "https://www.nationalarchives.gov.uk/hospitalrecords/",
             text: "Hospital Records Database",
             description: "Use the Hospital Records Database to discover the locations of hospital records.",
             source: "The National Archives website"
@@ -368,340 +373,340 @@ var link_data = (function () {
             source: "The National Archives website"
         },
         first_world_war: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/first-world-war/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/first-world-war/",
             text: "First World War",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         second_world_war: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/second-world-war/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/second-world-war/",
             text: "Second World War",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         crimean_war: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/crimean-war-records/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/crimean-war-records/",
             text: "Crimean War",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         cold_war: {
-            url: "http://www.nationalarchives.gov.uk/education/coldwar/",
+            url: "https://www.nationalarchives.gov.uk/education/resources/cold-war/",
             text: "Cold War",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         boer_war: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/boer-war-records/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/the-south-african-war-1899-1902-overview/",
             text: "Boer War",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         slavery: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/slavery-or-slave-owners/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/slavery-or-slave-owners/",
             text: "Slavery and slave owners",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         army_soldiers_after_1913: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-soldiers-after-1913/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-soldiers-of-the-first-world-war/",
             text: "British Army soldiers after 1913",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         army_officers_after_1913: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-officers-after-1913/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-officers-after-1913/",
             text: "British Army officers after 1913",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         army_regiments: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/army-regiments/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/army-regiments/",
             text: "Army regiments",
             description: "See our related research guide(s).",
             source: "Research Guides",
         },
         royal_navy_ratings: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-navy-ratings-service-records-1853-1928/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-navy-ratings-service-records-1853-1928/",
             text: "Royal Navy ratings 1853-1923",
             description: "See our related research guide(s).",
             source: "Research Guides",
         },
         air_force_personnel: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-air-force-personnel/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-air-force-personnel/",
             text: "Royal Air Force officers",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         air_force_squadrons: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-air-force-squadron/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-air-force-squadron/",
             text: "RAF squadrons",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         royal_navy_logbooks: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-navy-ships-voyages-log-books/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/royal-navy-ships-voyages-log-books/",
             text: "How to find Royal Navy ship's voyages in log books",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         war_diaries: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-operations-first-world-war/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-operations-first-world-war/",
             text: "First World War diaries of the British Army",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         ww1_medals: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-medal-index-cards-1914-1920/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-army-medal-index-cards-1914-1920/",
             text: "British Army medal index cards 1914-1923",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         campaign_and_service_medals: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-military-campaign-and-service-medals/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-military-campaign-and-service-medals/",
             text: "British military campaign and service medals",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         military_gallantry: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-military-gallantry-medals/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/british-military-gallantry-medals/",
             text: "British military gallantry medals",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         civilian_gallantry: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/civilian-gallantry-medals/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/civilian-gallantry-medals/",
             text: "British civilian gallantry medals",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         victoria_cross: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/victoria-cross-registers-1856-1944/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/victoria-cross-registers-1856-1944/",
             text: "Victoria Cross registers 1856-1944",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         merchant_navy_pre_1857: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant%20seaman%20serving-up-to-1857/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-seamen-in-service-before-1914/",
             text: "Merchant seamen serving up to 1857",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         merchant_navy_pre_1917: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant%20seaman%20serving-1858-1917/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-seamen-in-service-before-1914/",
             text: "Merchant seamen serving 1858 to 1917",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         merchant_navy_post_1917: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant%20seaman%20serving-after-1917/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-seamen-serving-since-1918/",
             text: "Merchant seamen serving after 1917",
             description: "See our related research guide(s).",
             source: "Research Guides",
         },
         flying_corps_airmen: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/airman-royal-flying-corps/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/airman-royal-flying-corps/",
             text: "RFC Airmen",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         flying_corps_officers: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/officer-royal-flying-corps/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/officer-royal-flying-corps/",
             text: "RFC Officers",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         homeguard: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/home-guard-personnel/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/home-guard-personnel/",
             text: "Home Guard personnel",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         police: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/officer-in-police-force/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/police/",
             text: "Police",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         prisons: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/prisons/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/prisons/",
             text: "Prisons",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         crew_lists_to_1860: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/crew-lists-agreements-log-books-merchant-ships-1747-1860/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-navy-ships-records-crew-lists-musters-and-log-books/",
             text: "Crew lists, agreements and log books of merchant ships 1747-1860",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         crew_lists_after_1861: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/crew-lists-agreements-log-books-merchant-ships-1861/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-navy-ships-records-crew-lists-musters-and-log-books/",
             text: "Crew lists, agreements and log books of merchant ships after 1861",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         league_of_nations: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/league-of-nations/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/league-of-nations/",
             text: "League of Nations",
             description: "See our related research guide(s).",
             source: "Research Guides",
         },
         indian_army: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/indian-army-personnel/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/indian-army-personnel/",
             text: "Indian army personnel",
             description: "See our related research guide(s).",
             source: "Research Guides",
         },
         a2a: {
-            url: "http://discovery.nationalarchives.gov.uk/",
+            url: "https://discovery.nationalarchives.gov.uk/",
             text: "Access to Archives",
             description: "Use Access to Archives to find content's of records in local archives in England and Wales.",
             source: "The National Archives website"
         },
         nra: {
-            url: "http://discovery.nationalarchives.gov.uk/",
+            url: "https://discovery.nationalarchives.gov.uk/",
             text: "National Register of Archives",
             description: "Use the National Register of Archives to discover the locations of archival records.",
             source: "The National Archives website"
         },
         archon: {
-            url: "http://discovery.nationalarchives.gov.uk/find-an-archive",
+            url: "https://discovery.nationalarchives.gov.uk/find-an-archive",
             text: "ARCHON Directory",
             description: "Use the ARCHON Directory to find contact details for archives.",
             source: "The National Archives website"
         },
         mdr: {
-            url: "http://discovery.nationalarchives.gov.uk/manor-search",
+            url: "https://discovery.nationalarchives.gov.uk/manor-search",
             text: "Manorial Documents Register",
             description: "Use the Manorial Documents Register to discover the locations of manorial records.",
             source: "The National Archives website"
         },
         mi5: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/security-history/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/intelligence-and-security-services/",
             text: "Security history",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         ufo: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/ufos/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/ufos/",
             text: "UFOs",
             description: "See our related research guide(s).",
             source: "Research Guides",
         },
         maps: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/maps/",
-            text: "Maps",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/maps-further-research/",
+            text: "Maps and plans",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         domesday: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/domesday-book/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/domesday-book/",
             text: "Domesday Book",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         titanic: {
-            url: "http://www.nationalarchives.gov.uk/titanic/",
+            url: "https://www.nationalarchives.gov.uk/titanic/",
             text: "Titanic",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         criminals_and_convicts: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/criminals-and-convicts/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/criminals-and-convicts/",
             text: "Criminals and convicts",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         civil_litigants: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/civil-litigants/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/civil-court-cases-overview/",
             text: "Civil litigants",
             description: "See our related research guide(s).",
             source: "Research Guides",
         },
         births_marriages_deaths: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/birth-marriage-death-england-and-wales/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/birth-marriage-death-england-and-wales/",
             text: "Births, marriages and deaths in England and Wales",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         houses: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/houses/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/houses/",
             text: "Houses",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         olympics: {
-            url: "http://www.nationalarchives.gov.uk/olympics/",
+            url: "https://www.nationalarchives.gov.uk/olympics/",
             text: "The Olympic Record",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         magna_carta: {
-            url: "http://www.nationalarchives.gov.uk/museum/item.asp?item_id=3",
+            url: "https://www.nationalarchives.gov.uk/magna-carta/",
             text: "Magna Carta",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         poor_law: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/poverty-poor-laws/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/poverty-poor-laws/",
             text: "Poverty and the Poor Laws",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         workhouse: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/workhouse/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/workhouse/",
             text: "Workhouses",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         cabinet_papers: {
-            url: "http://www.nationalarchives.gov.uk/cabinetpapers",
+            url: "https://www.nationalarchives.gov.uk/cabinetpapers/",
             text: "Cabinet Papers",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         wills_1384_1858: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/wills-1384-1858/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/wills-1384-1858/",
             text: "Wills",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         wills_or_administrations_pre_1858: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/wills-or-administrations-before-1858/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/wills-or-administrations-before-1858/",
             text: "Wills before 1858",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         wills_or_administrations_post_1858: {
-            url: "http://www.nationalarchives.gov.uk/help-with-your-research/research-guides/wills-or-administrations-after-1858/",
+            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/wills-or-administrations-after-1858/",
             text: "Wills after 1858",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
         web_archive: {
-            url: "http://www.nationalarchives.gov.uk/webarchive/",
+            url: "https://www.nationalarchives.gov.uk/webarchive/",
             text: "UK Government web archive",
             description: "The National Archives is preserving UK government information published on the web",
             source: "The National Archives website"
         },
         discovery_account: {
-            url: "https://secure.nationalarchives.gov.uk/Login/youraccount",
+            url: "https://discovery.nationalarchives.gov.uk/sign-in",
             text: "Your account on Discovery",
             description: "Sign into or visit your account on Discovery, our catalogue",
             source: "Discovery"
         },
-        bookshop_account: {
-            url: "http://bookshop.nationalarchives.gov.uk/store/go/require-login/",
-            text: "Your Bookshop account",
-            description: "Sign into or create an account with our Bookshop",
-            source: "Bookshop"
-        },
-        images_account: {
+       images_account: {
             url: "https://images.nationalarchives.gov.uk/assetbank-nationalarchives/action/viewLogin",
             text: "Your image library account",
             description: "Sign into or create an account with our image library",
             source: "Image library"
+        },
+        advanced_orders: {
+            url: "https://www.nationalarchives.gov.uk/about/visit-us/researching-here/how-to-order-view-and-copy-documents/",
+            text: "How to view and copy documents",
+            description: "Information about how you can view or obtain copies of documents held by The National Archives.",
+            source: "The National Archives website"
         }
     };
 
