@@ -203,7 +203,7 @@ var link_data = (function () {
         },
         {
             term: /crew( lists)?/i,
-            related_links: ['crew_lists_to_1860', 'crew_lists_after_1861'],
+            related_links: ['crew_lists'],
             strings_to_match: ['crew lists', 'crew']
         },
         {
@@ -256,12 +256,7 @@ var link_data = (function () {
             related_links: ['domesday'],
             strings_to_match: ['doomesday', 'domesday', 'domsday', 'doomsday']
         },
-        {
-            term: /titanic/i,
-            related_links: ['titanic'],
-            strings_to_match: ['titanic']
-        },
-        {
+       {
             term: /court( records)?/i,
             related_links: ['criminals_and_convicts', 'civil_litigants'],
             strings_to_match: ['court', 'court records']
@@ -277,11 +272,6 @@ var link_data = (function () {
             strings_to_match: ['house', 'houses']
         },
         {
-            term: /olympics?/i,
-            related_links: ['olympics'],
-            strings_to_match: ['olympic', 'olympics']
-        },
-        {
             term: /magna carta/i,
             related_links: ['magna_carta'],
             strings_to_match: ['magna carta']
@@ -291,12 +281,7 @@ var link_data = (function () {
             related_links: ['poor_law'],
             strings_to_match: ['poor law']
         },
-        {
-            term: /work( )?houses?/i,
-            related_links: ['workhouse'],
-            strings_to_match: ['workhouse', 'workhouses', 'work house', 'workhouses']
-        },
-        {
+       {
             term: /cabinet( papers)?/i,
             related_links: ['cabinet_papers'],
             strings_to_match: ['cabinet', 'cabinet papers']
@@ -320,12 +305,37 @@ var link_data = (function () {
             term: /((advanced?|bulk)\s?(order(s|ing)?)|order(ing)?\s?((in)? advance|documents|records))/i,
             related_links: ['advanced_orders'],
             strings_to_match: ['order documents','advance order','bulk order','ordering documents','order in advance','advance orders','bulk orders','Order documents','order records','advanced order','advance ordering','advanced orders','order advance']
+        },
+        {
+            term: /events?/i,
+            related_links: ['events_at_kew', 'events_online'],
+            strings_to_match: ['event', 'events']
+        },
+        {
+            term: /exhibitions?/i,
+            related_links: ['exhibitions'],
+            strings_to_match: ['exhibition', 'exhibitions']
+        },
+        {
+            term: /(spirit (of)? )?invention/i,
+            related_links: ['spirit_of_invention'],
+            strings_to_match: ['invention', 'spirit invention', 'spirit of invention']
+        },
+        {
+            term: /(20'?s|twenties|1920'?s) ?people/i,
+            related_links: ['spirit_of_invention'],
+            strings_to_match: ['20s people', '20\'s people', 'twenties people', '1920s people', '1920\'s people']
+        },
+        {
+            term: /treason/i,
+            related_links: ['treason'],
+            strings_to_match: ['treason']
         }
     ];
 
     var links = {
         tna_library: {
-            url: 'http://tna.koha-ptfs.co.uk/',
+            url: 'https://tna.koha-ptfs.co.uk/',
             text: 'The National Archives\' library',
             description: 'Search for archive-related books and periodical',
             source: 'The National Archives website'
@@ -534,19 +544,13 @@ var link_data = (function () {
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
-        crew_lists_to_1860: {
+        crew_lists: {
             url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-navy-ships-records-crew-lists-musters-and-log-books/",
-            text: "Crew lists, agreements and log books of merchant ships 1747-1860",
+            text: "Crew lists, agreements and log books of merchant ships",
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
-        crew_lists_after_1861: {
-            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/merchant-navy-ships-records-crew-lists-musters-and-log-books/",
-            text: "Crew lists, agreements and log books of merchant ships after 1861",
-            description: "See our related research guide(s).",
-            source: "Research Guides"
-        },
-        league_of_nations: {
+       league_of_nations: {
             url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/league-of-nations/",
             text: "League of Nations",
             description: "See our related research guide(s).",
@@ -606,13 +610,7 @@ var link_data = (function () {
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
-        titanic: {
-            url: "https://www.nationalarchives.gov.uk/titanic/",
-            text: "Titanic",
-            description: "See our related research guide(s).",
-            source: "Research Guides"
-        },
-        criminals_and_convicts: {
+       criminals_and_convicts: {
             url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/criminals-and-convicts/",
             text: "Criminals and convicts",
             description: "See our related research guide(s).",
@@ -636,12 +634,6 @@ var link_data = (function () {
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
-        olympics: {
-            url: "https://www.nationalarchives.gov.uk/olympics/",
-            text: "The Olympic Record",
-            description: "See our related research guide(s).",
-            source: "Research Guides"
-        },
         magna_carta: {
             url: "https://www.nationalarchives.gov.uk/magna-carta/",
             text: "Magna Carta",
@@ -654,13 +646,7 @@ var link_data = (function () {
             description: "See our related research guide(s).",
             source: "Research Guides"
         },
-        workhouse: {
-            url: "https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/workhouse/",
-            text: "Workhouses",
-            description: "See our related research guide(s).",
-            source: "Research Guides"
-        },
-        cabinet_papers: {
+       cabinet_papers: {
             url: "https://www.nationalarchives.gov.uk/cabinetpapers/",
             text: "Cabinet Papers",
             description: "See our related research guide(s).",
@@ -697,7 +683,7 @@ var link_data = (function () {
             source: "Discovery"
         },
        images_account: {
-            url: "https://images.nationalarchives.gov.uk/assetbank-nationalarchives/action/viewLogin",
+            url: "https://images.nationalarchives.gov.uk/",
             text: "Your image library account",
             description: "Sign into or create an account with our image library",
             source: "Image library"
@@ -706,6 +692,42 @@ var link_data = (function () {
             url: "https://www.nationalarchives.gov.uk/about/visit-us/researching-here/how-to-order-view-and-copy-documents/",
             text: "How to view and copy documents",
             description: "Information about how you can view or obtain copies of documents held by The National Archives.",
+            source: "The National Archives website"
+        },
+        exhibitions: {
+            url: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/exhibitions/",
+            text: "Information about past and current exhibitions",
+            description: "Our exhibitions are free and open to all. You do not need to book to visit, but do check our opening times.",
+            source: "The National Archives website"
+        },
+        events_at_kew: {
+            url: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/events/",
+            text: "Events at Kew",
+            description: "We also host a full programme of online events, which can be enjoyed from the comfort of home. Plus, you can explore our family and children’s events.",
+            source: "The National Archives website"
+        },
+        events_online: {
+            url: "https://www.nationalarchives.gov.uk/about/visit-us/whats-on/events/",
+            text: "Online events",
+            description: "Our exciting programme of online talks is for everyone and delivered by our experts, specialists and special guest speakers.",
+            source: "The National Archives website"
+        },
+        spirit_of_invention: {
+            url: "https://www.nationalarchives.gov.uk/spirit-of-invention/",
+            text: "Spirit of Invention",
+            description: "Step into a world of creativity from past to present – see original Victorian designs that capture the glorious imagination of Victorian Britain alongside designs from modern makers.",
+            source: "The National Archives website"
+        },
+        twenties_people: {
+            url: "https://www.nationalarchives.gov.uk/20s-people/",
+            text: "20s People",
+            description: "Our 20sPeople programme explores stories connecting the people of the 1920s with us in the 2020s.",
+            source: "The National Archives website"
+        },
+        treason: {
+            url: "https://www.nationalarchives.gov.uk/treason/",
+            text: "Treason",
+            description: "Iconic and unknown archival documents to life, including the original Treason Act and the Monteagle Letter that tipped off the Gunpowder Plot.",
             source: "The National Archives website"
         }
     };
